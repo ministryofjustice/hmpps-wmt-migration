@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: wmt-migration-cronjob
+  name: hmpps-wmt-migration-cronjob
 spec:
   schedule: {{ .Values.cronjob_schedule }}
   concurrencyPolicy: Forbid
@@ -13,8 +13,8 @@ spec:
       template:
         spec:
           containers:
-            - name: wmt-migration
-              image: quay.io/hmpps/wmt-migration
+            - name: hmpps-wmt-migration
+              image: quay.io/hmpps/hmpps-wmt-migration
               args:
                 - /bin/bash
                 - migrationRun.sh
