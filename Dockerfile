@@ -16,9 +16,8 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg ma
     && apt-get update \
     && apt-get -y install postgresql-client
 
-RUN addgroup --gid 2000 --system appgroup && \
-    adduser --uid 2000 --system appuser --gid 2000
-
+RUN addgroup --gid 2000 --system appgroup \
+    && adduser --uid 2000 --system appuser --gid 2000
 
 
 USER 2000
