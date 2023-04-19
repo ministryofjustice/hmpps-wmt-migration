@@ -8,6 +8,7 @@ spec:
   failedJobsHistoryLimit: 5
   startingDeadlineSeconds: 600
   successfulJobsHistoryLimit: 5
+  timeZone: "Etc/UTC"
   jobTemplate:
     spec:
       template:
