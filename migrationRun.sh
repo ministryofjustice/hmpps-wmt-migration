@@ -8,7 +8,7 @@ aws dms start-replication-task --replication-task-arn $REPLICATION_TASK_ARN --st
 taskStatus=$(aws dms describe-replication-tasks | jq -r '.ReplicationTasks[] | select(.ReplicationTaskArn == env.REPLICATION_TASK_ARN) | .Status')
 
 
-while [[ $taskStatus != "stopped" ]];
+while [[ $taskStatus != "stopped" && $taskStatus != "failed" ]];
 do
   sleep 30s
   taskStatus=$(aws dms describe-replication-tasks | jq -r '.ReplicationTasks[] | select(.ReplicationTaskArn == env.REPLICATION_TASK_ARN) | .Status')
