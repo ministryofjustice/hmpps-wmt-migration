@@ -10,3 +10,4 @@ namespace_secrets:
     PGDATABASE: "database_name"
   dms-impact-testing-instance:
     REPLICATION_TASK_ARN: "full_task"
+  serviceAccountName: hmpps-workload
