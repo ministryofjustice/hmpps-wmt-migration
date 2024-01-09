@@ -12,6 +12,7 @@ spec:
     spec:
       template:
         spec:
+          serviceAccountName: hmpps-workload
           containers:
             - name: hmpps-wmt-migration
               image: quay.io/hmpps/hmpps-wmt-migration
